@@ -1,1 +1,25 @@
 # Projetos realizados no TIA Portal
+
+## Configuração de Hardware
+
+1. **Controlador Lógico Programável (CLP):**
+   
+   - **Modelo:** SIMATIC S7-1200, CPU 1214C AC/DC/Rly
+   - **Identificação:** 6ES7 214-1BG40-0XB0
+   - **Versão:** 4.5
+   - **I/O:** 14 DI, 10 DO, 2 AI
+     
+2. **Módulo de expansão de entradas/saídas digitais:**
+   
+   - **Modelo:** SM 1223 DI16/DQ16 x 24VDC
+   - **Identificação:** 6ES7 223-1BL32-0XB0
+   - **Versão:** 2.0
+   - **I/O:** 16 DI, 16 DO
+     
+3. **Módulo de expansão de entradas analógicas:**
+   
+   - **Modelo:** SM 1231 AI8
+   - **Identificação:** 6ES7 231-4HF32-0XB0
+   - **Versão:** 2.1
+   - **I/O:** 8 AI
+   
