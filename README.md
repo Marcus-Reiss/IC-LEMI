@@ -8,6 +8,7 @@
    - **Identificação:** 6ES7 214-1BG40-0XB0
    - **Versão:** 4.5
    - **I/O:** 14 DI, 10 DO, 2 AI
+   - ***Datasheet:*** [link](https://github.com/Marcus-Reiss/IC-LEMI/blob/main/Datasheets/6ES72141BG400XB0_datasheet_en.pdf) 
      
 2. **Módulo de expansão de entradas/saídas digitais:**
    
@@ -15,6 +16,7 @@
    - **Identificação:** 6ES7 223-1BL32-0XB0
    - **Versão:** 2.0
    - **I/O:** 16 DI, 16 DO
+   - ***Datasheet:*** [link](https://github.com/Marcus-Reiss/IC-LEMI/blob/main/Datasheets/6ES72231BL320XB0_datasheet_en.pdf) 
      
 3. **Módulo de expansão de entradas analógicas:**
    
@@ -22,4 +24,5 @@
    - **Identificação:** 6ES7 231-4HF32-0XB0
    - **Versão:** 2.1
    - **I/O:** 8 AI
+   - ***Datasheet:*** [link](https://github.com/Marcus-Reiss/IC-LEMI/blob/main/Datasheets/6ES72314HF320XB0_datasheet_en.pdf)
    
