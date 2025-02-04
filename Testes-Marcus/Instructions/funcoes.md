@@ -14,8 +14,6 @@
 > 
 > - Chama as funções [OPERAÇÃO - M1](#opera%C3%A7%C3%A3o---m1), [OPERAÇÃO - M2](#opera%C3%A7%C3%A3o---m2), [OPERAÇÃO - M3](#opera%C3%A7%C3%A3o---m3) e [Obtém pressão](#obt%C3%A9m-press%C3%A3o) 
 
-
-
 ## Modos de operação no contexto da lógica conjunta
 
 #### *OPERAÇÃO - M1*
@@ -55,8 +53,6 @@
 > - Quando "em operação", chama [M3 - Operação iniciada](#m3---opera%C3%A7%C3%A3o-inicada)
 > 
 > - Quando "saindo da operação", chama [M3 - Operação finalizada](#m3---opera%C3%A7%C3%A3o-finalizada) e pode chamar [Protocolo de Emergência](#protocolo-de-emerg%C3%AAncia)
-
-
 
 ## Caminhos de operação dos modos
 
@@ -124,8 +120,6 @@
 > 
 > - Chama a função [Finaliza operação - M3](#finaliza-opera%C3%A7%C3%A3o-m3)
 
-
-
 ## Modo 1 - funções principais
 
 #### *Monitora pressão*
@@ -136,15 +130,15 @@
 > > 
 > > ***Output:*** bool **Crescente** (indica se a pressão é crescente)
 > > 
-> > ***Temp:*** real **Pressao** (pressão do tanque separador); bool **Positivo 1** (*output* da função *Calcula derivada*); bool **Positivo 2** (*output* da função *Calcula média móvel*)
+> > ***Temp:*** real **Pressao** (pressão do tanque separador)
 > 
-> - Chama as funções [Obtém pressão](#obt%C3%A9m-press%C3%A3o), [Calcula derivada](#calcula-derivada) e [Calcula média móvel](#calcula-m%C3%A9dia-m%C3%B3vel)
+> - Chama as funções [Obtém pressão](#obt%C3%A9m-press%C3%A3o), [Calcula derivada](#calcula-derivada), [Calcula média móvel](#calcula-m%C3%A9dia-m%C3%B3vel) e [Calcula diferença](#calcula-diferença)
 > 
-> - Utiliza um **TON** (Timer de amostragem)
+> - Utiliza um **TON** (Timer de amostragem) e um **TP** (Timer de Reset)
 > 
-> - A pressão é considerada crescente quando **Positivo 1** <u>E</u> **Positivo 2** são *true*
+> - A pressão é considerada crescente quando as variáveis **Derivada** <u>E</u> **Media movel** <u>E</u> **Diferenca** são *true*
 > 
-> - A pressão é considerada decrescente quando **Positivo 1** <u>E</u> **Positivo 2** são *false
+> - A pressão é considerada decrescente quando as variáveis **Derivada** <u>E</u> **Media movel** são *false* <u>E</u> **Diferenca** é *true*
 
 #### *Pressão crescente*
 
@@ -169,8 +163,6 @@
 > - Chama a função [Desliga compressores](#desliga-compressores)
 > 
 > - Pode chamar a função [Verifica válvulas 2](#verifica-v%C3%A1lvulas-2) e a [Atualiza índices](#atualiza-%C3%ADndices)
-
-
 
 ## Modo 3 - funções principais
 
@@ -199,8 +191,6 @@
 > - Chama a função [Obtém pressão - M3](#obt%C3%A9m-press%C3%A3o---m3)
 > 
 > - Se **PA** <= **Plim** coloca a variável global **Plim atingida** em *true*
-
-
 
 ## Funções de finalização e emergência
 
@@ -231,8 +221,6 @@
 > > ***Input:*** nenhum
 > > 
 > > ***Output:*** nenhum
-
-
 
 ## Funções de acionamento
 
@@ -268,8 +256,6 @@
 > 
 > - Coloca a variável global **Valvulas ON - M3** em *true*
 
-
-
 ## Funções de desligamento
 
 #### *Desliga compressores*
@@ -304,8 +290,6 @@
 > 
 > - Coloca a variável global **Valvulas ON - M3** em *false*
 
-  
-
 ## Funções que envolvem cálculos
 
 #### *Calcula derivada*
@@ -314,21 +298,36 @@
 > 
 > > ***Input:*** nenhum
 > > 
-> > ***Output:*** bool **Positivo** (recebe *true* se a derivada é positiva)
+> > ***Output:*** nenhum
 > > 
 > > ***Temp:*** real **Derivada** (derivada dos valores de pressão)
+> 
+> - Coloca a variável global **Derivada** em *true* caso a derivada seja positiva
 
 #### *Calcula média móvel*
 
-> **Calcula médias móveis de 5 e 10 valores de pressão e verifica se a pressão é crescente**
+> **Calcula médias móveis de 6 e 20 valores de pressão e verifica se a pressão é crescente**
 > 
 > > ***Input:*** nenhum
 > > 
-> > ***Output:*** bool **Positivo** (recebe *true* se a média de 10 é maior que a média de 5)
+> > ***Output:*** nenhum
 > > 
-> > ***Temp:*** int **index 5**, int **index 10** (índices que percorrem o array de valores de pressão); real **soma 5**, real **soma 10** (variáveis auxiliares para o cálculo das médias); real **media 5**, real **media 10** (médias de 5 e 10 valores)
+> > ***Temp:*** int **index** (índice que percorre o array de valores de pressão); real **soma 6**, real **soma 20** (variáveis auxiliares para o cálculo das médias); real **media 6**, real **media 20** (médias de 6 e 20 valores)
 > 
 > - Realizada com linguagem SCL
+> - Coloca a variável global **Media movel** em *true* caso a média de 20 valores seja maior que a média de 6 valores
+
+#### *Calcula diferença*
+
+> **Calcula a diferença entre último e primeiro valores de pressão e verifica se é maior que determinado threshold**
+> 
+> > ***Input:*** nenhum
+> > 
+> > ***Output:*** nenhum
+> > 
+> > ***Temp:*** real **Diferenca** (diferença entre último e primeiro valores do *array* de pressão); real **Diferenca absoluta** (módulo da diferença)
+> 
+> - Coloca a variável global **Diferenca** em *true* caso o módulo da diferença seja superior ao *threshold* 
 
 #### *Calcula média - M3*
 
@@ -358,8 +357,6 @@
 
 #### *Atualiza threshold de Ta*
 
-
-
 ## Funções que gerenciam a sequência de índices
 
 #### *Atualiza índices*
@@ -379,8 +376,6 @@
 > > ***Input:*** int **index** (índice da sequência de compressores); bool **valor logico** (determina se é preciso acionar ou desligar o compressor)
 > > 
 > > ***Output:*** nenhum
-
-
 
 ## Funções de verificação
 
@@ -423,8 +418,6 @@
 > > ***Output:*** nenhum
 > 
 > - Chama a função [Desliga válvulas - M3](#desliga-v%C3%A1lvulas---m3)
-
-
 
 ## Funções de leitura de entradas analógicas
 
@@ -474,14 +467,4 @@
 > > 
 > > ***Temp:*** real **Temperatura normalizada** (valor normalizado da temperatura)
 > 
-> - Utiliza os blocos **NORM_X** e **SCALE_X**
-
-### 
-
-### 
-
-
-
-
-
-### 
+> - Utiliza os blocos **NORM_X** e **SCALE_X** 
