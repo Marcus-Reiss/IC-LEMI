@@ -106,7 +106,7 @@
 > > 
 > > ***Output:*** nenhum
 > > 
-> > ***Temp:*** real **Media** (média dos valores da pressão de abastecimento); real **Threshold de Peq** (é o valor (1 - gamma)*Peq )
+> > ***Temp:*** real **Media** (média dos valores da pressão de abastecimento); real **Threshold menor de Peq** ( é o valor (1 - gamma)*Peq ); real **Threshold maior de Peq** ( é o valor (1 + gamma)*Peq ) 
 > 
 > - Chama as funções [Aciona válvulas - M3](#aciona-v%C3%A1lvulas-m3), [Atinge pressão de eq](#atinge-press%C3%A3o-de-eq), [Calcula média - M3](#calcula-m%C3%A9dia---m3), [Aciona compressores](#aciona-compressores), [Atinge Plim](#atinge-plim) e [Finaliza operação - M3](#finaliza-opera%C3%A7%C3%A3o-m3)
 
