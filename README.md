@@ -9,6 +9,8 @@
    - **Versão:** 4.5
    - **I/O:** 14 DI, 10 DO, 2 AI
    - ***Datasheet:*** [link](https://github.com/Marcus-Reiss/IC-LEMI/blob/main/Datasheets/6ES72141BG400XB0_datasheet_en.pdf) 
+   - ***Obs.:*** Caso haja erro na compilação de hardware:
+   *Device configuration -> click on CPU -> Protection & Security -> Full access (no protection)*
      
 2. **Módulo de expansão de entradas/saídas digitais:**
    
