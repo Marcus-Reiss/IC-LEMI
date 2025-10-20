@@ -101,7 +101,7 @@ Na pasta [Testes-iniciais](https://github.com/Marcus-Reiss/IC-LEMI/tree/main/Tes
 
 ---
 
-## Projeto do Sistema de Compressores
+## Projeto do Sistema de Compressores Auxiliares
 
 - Todo o código do projeto se encontra no presente repositório, na pasta [The-compressor-project](https://github.com/Marcus-Reiss/IC-LEMI/tree/main/The-compressor-project).
 
