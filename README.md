@@ -1,5 +1,29 @@
 # Repositório de Automação do LEMI
 
+> Repositório destinado à manutenção do conhecimento sobre automação industrial no Laboratório de Escoamentos Multifásicos Industriais da USP de São Carlos.
+> 
+> Criado em 20/10/2025
+
+---
+
+## Diagrama de Estados
+
+### Teoria
+
+Um pouco da teoria associada aos Diagramas de Estados pode ser acessado [aqui](https://drive.google.com/drive/folders/1K_JtINrELo0-6RyR0VND8tAjkm-flZtJ?usp=sharing).
+
+### Elementos de template para confecção de Diagrama de Estados
+
+Nesse [link](https://www.figma.com/design/sUtT1NiWE6Kaxhr6otfkeP/Elementos-de-template-para-Diagramas-de-Estado?node-id=0-1&t=2iYs1DNGS1sRDzut-1) você encontra um projeto no *Figma* no qual há elementos de template tanto para Diagrama de Estados, quanto para esboço de painéis elétricos.
+
+---
+
+## Programação de CLP
+
+Um pouco da teoria associada à programação de CLP pode ser acessado [aqui](https://drive.google.com/drive/folders/1z-P9JIa5zRTL5xun0JkSCE7rshpo8gXD?usp=sharing).
+
+---
+
 ## Instalação - TIA Portal V18 Full
 
 Entre nessa [página](https://plc247.com/download-tia-portal-v18-full-video-installation/) e siga o passo a passo nela descrito.
@@ -79,7 +103,6 @@ Na pasta [Testes-iniciais](https://github.com/Marcus-Reiss/IC-LEMI/tree/main/Tes
 
 ## Projeto do Sistema de Compressores
 
-- link código
-- link diagramas de estado
-- link lógicas em texto
-- link descrição do projeto
+- Todo o código do projeto se encontra no presente repositório, na pasta [The-compressor-project](https://github.com/Marcus-Reiss/IC-LEMI/tree/main/The-compressor-project).
+
+- Todas as demais informações concernentes ao projeto estão nessa [pasta](https://drive.google.com/drive/folders/1CNuaKfnw3un-AahSKrB-T5drlT_RsD4Z?usp=sharing) do Google Drive.
